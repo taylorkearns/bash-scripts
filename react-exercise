@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+Prefix=$1
+gh repo clone git@github.com:TheGnarCo/job-board-react.git $Prefix-job-board-react
+cd $Prefix-job-board-react
+git remote remove origin
+gh repo create TheGnarCo/$Prefix-job-board-react --private --confirm
+git push -u origin head
+open https://github.com/TheGnarCo/$Prefix-job-board-react

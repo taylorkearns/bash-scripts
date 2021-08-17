@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+Prefix=$1
+gh repo clone git@github.com:TheGnarCo/job-board.git $Prefix-job-board
+cd $Prefix-job-board
+git remote remove origin
+gh repo create TheGnarCo/$Prefix-job-board --private --confirm
+git push -u origin head
+open https://github.com/TheGnarCo/$Prefix-job-board
